@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="a-fullsceen" foxified>
+  <head>
+    <script src="aframe.js"></script>
+    <title>VR APP Week 9</title>
+  </head>
+
+  <body>
+    <a-scene cursor="rayOrigin: mouse" raycaster="objects: .raycastable">
+      <a-assets>
+        <a-asset-item id="class" src="assets/scene.gltf"></a-asset-item>
+      </a-assets>
+
+      <a-entity id="home">
+        <!--classroom-->
+        <a-gltf-model
+          src="#class"
+          scale="0.1 0.1 0.1"
+          rotation="0 180 0"></a-gltf-model>
+      </a-entity>
+
+           <!--Player viewport-->
+      <a-camera position="2 13 0">
+
+      <a-entity id="rig" position="0 13 3">
+        <a-entity id="camera look-controls"> </a-entity>
+        <a-entity
+          id="leftHand"
+          laser-controls="hand: left"
+          raycaster="objects: .raycastable"
+          line="color: #118A7E"></a-entity>
+        <a-entity
+          id="rightHand"
+          laser-controls="hand: right"
+          raycaster="objects: .raycastable"
+          line="color: #118a7e"></a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
