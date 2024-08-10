@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>app 2</title>
+    <script src="aframe.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <video
+          id="borough"
+          autoplay
+          loop="true"
+          src="media/borough4k.mp4"></video>
+      </a-assets>
+      <a-videosphere src="#borough"></a-videosphere>
+      <!--player viewport-->
+      <a-camera postion="2 3 5">
+        <!-- Cursoe Circle-->
+        <a-cursor color=" red"></a-cursor>
+      </a-camera>
+    </a-scene>
+  </body>
+</html>
