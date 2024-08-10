@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>New App</title>
+    <script src="aframe.js"></script>
+    <script src="environment.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-box color="red" position="0 1 -4" rotation="0 45 45" scale="1 1 1">
+      </a-box>
+      <a-sphere color="green" position="-2 1 2" scale="1 1 1"></a-sphere>
+      <a-cone color="blue" position="1 1 -10" rotation="0 45 0" scale="1 1 1">
+      </a-cone>
+      <a-cylinder color="pink" position=" 0 1 4" scale="1 1 1"> </a-cylinder>
+
+      <!--Environment as entity-->
+      <a-entity environment="preset: starry"></a-entity>
+
+      <!--Player Viewport-->
+      <a-camera position="2 3 5">
+        <!--Cursor circle-->
+        <a-cursor color="red"></a-cursor>
+      </a-camera>
+    </a-scene>
+  </body>
+</html>

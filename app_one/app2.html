@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="aframe.js"></script>
+    <meta charset="UTF-8" />
+    <title>app2</title>
+    <!--Environment Script-->
+    <script src="environment.js"></script>
+  </head>
+  <body>
+    <a-scene>
+     <a-box
+        color="green"
+        position="2 2 -3"
+        rotation="0 45 0"
+        scale="1 1 1"
+        animation__2="property: position; from:2 2 -3; to: 2 2 2; dir: alternate; dur: 2000; loop:true">
+    </a-box>
+     <a-box
+        color="red"
+        position="4 2 -3"
+        rotation="0 45 0"
+        scale="1 1 1"
+        animation__2="property: position; from:4 2 -3; to: 4 2 2; dir: alternate; dur: 2000; loop:true">
+    </a-box>
+ <a-box
+        color="blue"
+        position="0 2 -3"
+        rotation="0 45 0"
+        scale="1 1 1"
+        animation__2="property: position; from: 6 2 -3; to: 6 2 2; dir: alternate; dur: 2000; loop:true">
+    </a-box>
+
+    <!--Environment as entity-->
+    <a-entity environment="preset: tron"></a-entity>
+
+      <!--Player Viewport-->
+      <a-camera position="2 3 5">
+        <!--Cursor circle-->
+        <a-cursor color="red></a-cursor>
+      </a-camera>
+    </a-scene>
+  </body>
+</html>
