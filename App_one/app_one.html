@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" class="a-fullsceen" foxified>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="aframe.js"></script>
+    <title>title</title>
+  </head>
+  <body>
+    <a-scene>
+      <a-asset-item id="location1" src="/assets/apartment.glb"></a-asset-item>
+      <a-asset-item id="location2" src="/assets/garage.glb"></a-asset-item>
+      <a-asset-item id="location3" src="/assets/engine.glb"></a-asset-item>
+
+      <!-- Scene 1-->
+      <a-entity id="scene1" position="0 -1 0" visible="true">
+        <a-gltf-model src="#location1" scale="1 1 1"></a-gltf-model>
+
+        <!--Garage-->
+        <a-box
+          color="red"
+          position="-5 1 -2"
+          scale="0.5 0.5 0.5"
+          onclick="scene_1()">
+          <a-text
+            value="Click box to telport to garage"
+            rotation="0 90 0"
+            postion="0 1 1"></a-text>
+        </a-box>
+
+        <!--Engine-->
+        <a-box
+          color="orange"
+          position="-1 1 -3"
+          scale="0.5 0.5 0.5"
+          onclick="scene_3()">
+          <a-text
+            value="Click box to teleport to Engine"
+            rotation="0 90 0"
+            position="0 1 1"
+            scale="1 1 1"></a-text>
+        </a-box>
+      </a-entity>
+
+      <!--Scene 2-->
+      <a-entity id="scene2" position="0 -1 0" visible="false" scale="1 1 1">
+        <a-gltf-model src="#location2" scale="1 1 1"></a-gltf-model>
+        <a-box
+          color="green"
+          position="-1 1 -3"
+          scale="0.5 0.5 0.5"
+          onclick="scene_2()">
+          <a-text
+            value="Click box to teleport to apartment"
+            rotation="0 90 0"
+            position="0 1 1"
+            scale="1 1 1"></a-text>
+        </a-box>
+      </a-entity>
+
+      <!--Scene 3-->
+      <a-entity id="scene3" position="0 -1 0" visible="false" scale="1 1 1">
+        <a-gltf-model src="#location3" scale="1 1 1"></a-gltf-model>
+        <!--Box 1 apartment-->
+        <a-box
+          color="red"
+          position="-5 1 -2"
+          scale="0.5 0.5 0.5"
+          onclick="scene_1()">
+          <a-text
+            value="Click box to telport"
+            rotation="0 90 0"
+            postion="0 1 1"></a-text>
+        </a-box>
+        <!--Box 2 garage-->
+        <a-box
+          color="green"
+          position="-1 1 -3"
+          scale="0.5 0.5 0.5"
+          onclick="scene_2()">
+          <a-text
+            value="Click box to teleport to garage"
+            rotation="0 90 0"
+            position="0 1 1"
+            scale="1 1 1"></a-text>
+        </a-box>
+      </a-entity>
+
+      <!--Player viewport-->
+      <a-camera position="0 0 0">
+        <!--Cursor Circle-->
+        <a-cursor color="red"></a-cursor>
+      </a-camera>
+    </a-scene>
+
+    <!--Scene switch script-->
+    <script type="text/javascript">
+      //teleport to scene one
+      function scene_1() {
+        document.getElementById("scene1").setAttribute("visible", "false");
+        document.getElementById("scene2").setAttribute("visible", "true");
+        document.getElementById("scene3").setAttribute("visible", "false");
+      }
+      // teleport to scene two
+      function scene_2() {
+        document.getElementById("scene1").setAttribute("visible", "true");
+        document.getElementById("scene2").setAttribute("visible", "false");
+        document.getElementById("scene3").setAttribute("visible", "true");
+      }
+      // teleport to scene two
+      function scene_3() {
+        document.getElementById("scene1").setAttribute("visible", "false");
+        document.getElementById("scene2").setAttribute("visible", "false");
+        document.getElementById("scene3").setAttribute("visible", "true");
+      }
+    </script>
+  </body>
+</html>
